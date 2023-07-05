@@ -12,7 +12,22 @@ namespace DartsGame
         /// <returns>The earned points.</returns>
         public static int GetScore(double x, double y)
         {
-            throw new NotImplementedException("You need to implement this method.");
+            double radius = (x * x) + (y * y);
+            int res = 0;
+            if (radius <= 1)
+            {
+                res += 10;
+            }
+            else if (radius <= 25)
+            {
+                res += 5;
+            }
+            else if (radius <= 100)
+            {
+                res += 1;
+            }
+
+            return res;
         }
     }
 }
